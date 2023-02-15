@@ -26,9 +26,12 @@ class Food(pygame.sprite.Sprite):
 
         for x in range(0,width,size):
             for y in range(0,height,size):
+                flag = True 
                 for sprite in tail.sprites():
-                    if sprite.rect.x != x and sprite.rect.y != y:
-                        cordinate.append((x,y))
+                    if sprite.rect.x == x and sprite.rect.y == y:
+                        flag = False 
+                if flag:    
+                    cordinate.append((x,y))
 
         return cordinate
 
